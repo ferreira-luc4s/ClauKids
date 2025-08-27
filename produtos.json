@@ -1,0 +1,17 @@
+[
+  {
+    "nome": "Vestido Infantil",
+    "preco": 80,
+    "imagem": "https://via.placeholder.com/200x150.png?text=Vestido"
+  },
+  {
+    "nome": "Conjunto Colorido",
+    "preco": 95,
+    "imagem": "https://via.placeholder.com/200x150.png?text=Conjunto"
+  },
+  {
+    "nome": "Camiseta Divertida",
+    "preco": 45,
+    "imagem": "https://via.placeholder.com/200x150.png?text=Camiseta"
+  }
+]

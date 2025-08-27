@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clau Kids - Loja Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="imagens/logo.jpg" alt="Logo Clau Kids">
+    <h1>Bem-vindo à Clau Kids!</h1>
+    <p>Moda infantil cheia de cores e alegria 🌸</p>
+    <button class="btn-nav" onclick="window.location.href='carrinho.html'">🛒 Ver Carrinho</button>
+  </header>
+
+  <!-- Produtos serão carregados dinamicamente -->
+  <section class="produtos" id="produtos"></section>
+
+  <script src="script.js"></script>
+  <script>
+    // Carrega os produtos do JSON e monta os cards
+    fetch("produtos.json")
+      .then(res => res.json())
+      .then(produtos => {
+        const container = document.getElementById("produtos");
+        produtos.forEach(p => {
+          let div = document.createElement("div");
+          div.className = "produto";
+
+          div.innerHTML = `
+            <img src="${p.imagem}" alt="${p.nome}">
+            <h2>${p.nome}</h2>
+            <p>R$ ${p.preco},00</p>
+            <button onclick="adicionarCarrinho('${p.nome}', ${p.preco}, '${p.imagem}')">Adicionar ao Carrinho</button>
+          `;
+
+          container.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>

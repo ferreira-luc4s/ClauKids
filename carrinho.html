@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Carrinho - Clau Kids</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="imagens/logo.jpg" alt="Logo Clau Kids">
+    <h1>Meu Carrinho 🛒</h1>
+
+    <!-- Botão para voltar à loja -->
+    <button class="btn-nav" onclick="window.location.href='index.html'">⬅️ Voltar à Loja</button>
+  </header>
+
+  <section class="carrinho">
+    <div id="lista-carrinho"></div>
+    <p><strong>Total: R$ <span id="total">0</span></strong></p>
+    <button onclick="finalizarCompra()">Finalizar Compra no WhatsApp</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

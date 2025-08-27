@@ -1,0 +1,174 @@
+/* ======= ESTILO GERAL ======= */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ffd6f6, #c6f7ff, #fff7b2);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: #444;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-bottom: 4px solid #f9a;
+}
+
+header img {
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+h1 {
+  margin: 10px 0;
+  color: #ff6fa1;
+}
+
+/* ======= PRODUTOS ======= */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.produto {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.produto:hover {
+  transform: scale(1.05);
+}
+
+.produto img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.produto h2 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.produto p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.produto button {
+  background: #ff6fa1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.produto button:hover {
+  background: #ff3f7a;
+}
+
+/* ======= CARRINHO ======= */
+.carrinho {
+  background: white;
+  padding: 20px;
+  border-top: 4px solid #ff6fa1;
+}
+
+.carrinho h2 {
+  margin-top: 0;
+}
+
+.carrinho ul {
+  list-style: none;
+  padding: 0;
+}
+
+.carrinho li {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.carrinho button {
+  margin-top: 10px;
+  background: #34af23;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.carrinho button:hover {
+  background: #248f14;
+}
+
+/* Botões de navegação */
+.btn-nav {
+  background: #ff6fa1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-nav:hover {
+  background: #ff3f7a;
+  transform: scale(1.05);
+}
+
+/* Estilo do item no carrinho */
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.item-carrinho img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.item-carrinho span {
+  flex: 1;
+  font-size: 14px;
+}
+
+.item-carrinho button {
+  background: #ff4444;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.item-carrinho button:hover {
+  background: #cc0000;
+}
+
