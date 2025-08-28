@@ -430,3 +430,143 @@ footer .redes a:hover {
     width: 100%;
   }
 }
+
+/* ===== Página de Contato ===== */
+.contato {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 28px;
+  color: #ff3f7a;
+  margin-bottom: 15px;
+}
+
+.contato p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+/* Formulário */
+.form-contato {
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-contato label {
+  text-align: left;
+  font-weight: bold;
+  color: #ff3f7a;
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 10px;
+  border: 2px solid #ffd6f6;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+  border-color: #ff6fa1;
+  box-shadow: 0 0 8px rgba(255,111,161,0.3);
+}
+
+/* Informações de contato */
+.contato-info {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Fundo diferenciado para o mostruário */
+.mostruario-body {
+  background: #fffdfd url("imagens/fundo-infantil.png") repeat;
+  background-size: 200px;
+}
+
+/* Header exclusivo */
+.mostruario-header {
+  background: linear-gradient(135deg, #ff9ec4, #ffd6e8);
+  padding: 20px;
+  color: white;
+}
+.mostruario-header h1 span {
+  color: #fff;
+}
+.mostruario-header .texto-header p {
+  color: #fefefe;
+}
+
+/* Grid de produtos */
+.mostruario-grid {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.produto-m {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+.produto-m:hover {
+  transform: scale(1.05);
+}
+.produto-m img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.produto-m h3 {
+  color: #ff3f7a;
+  font-size: 18px;
+  margin: 12px 0 6px;
+}
+.produto-m p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Categorias com faixas */
+.categoria {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 40px auto 20px;
+  text-align: center;
+}
+.faixa-verao {
+  background: #ff80ab;
+  color: #fff;
+}
+.faixa-inverno {
+  background: #4dabf7;
+  color: #fff;
+}
+
+/* Link ativo no menu */
+.menu-links .ativo {
+  font-weight: bold;
+  color: #ff3f7a;
+}
+
+

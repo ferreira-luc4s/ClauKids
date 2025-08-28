@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mostruário - Clau Kids</title>
+  <link rel="stylesheet" href="style.css"> <!-- estilos gerais -->
+  <link rel="stylesheet" href="mostruario.css"> <!-- estilos exclusivos -->
+</head>
+<body class="mostruario-body">
+  <header class="mostruario-header">
+    <div class="topo">
+      <img src="imagens/logo.jpg" alt="Logo Clau Kids" class="logo">
+      <div class="texto-header">
+        <h1><span>Mostruário</span> Clau Kids</h1>
+        <p>Apresentação de produtos para nossos parceiros 🌟</p>
+      </div>
+      <button class="btn-nav" onclick="window.location.href='index.html'">
+        ⬅️ Voltar à Loja
+      </button>
+    </div>
+
+    <!-- Menu Hambúrguer Estilizado -->
+    <nav class="menu">
+      <div class="hamburguer" onclick="toggleMenu()">
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+      </div>
+      <ul class="menu-links">
+        <li><a href="index.html">Produtos</a></li>
+        <li><a href="mostruario.html" class="ativo">Mostruário</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Categoria Verão -->
+  <h2 class="categoria faixa-verao">Coleção Verão 🌞</h2>
+  <section class="mostruario-grid">
+    <div class="produto-m">
+      <img src="imagens/vestido1.jpg" alt="Vestido Infantil Floral">
+      <h3>Vestido Floral</h3>
+      <p>Delicado e confortável, ideal para ocasiões especiais.</p>
+    </div>
+    <div class="produto-m">
+      <img src="imagens/conjunto1.jpg" alt="Conjunto Colorido">
+      <h3>Conjunto Colorido</h3>
+      <p>Estilo alegre para o dia a dia.</p>
+    </div>
+  </section>
+
+  <!-- Categoria Inverno -->
+  <h2 class="categoria faixa-inverno">Coleção Inverno ❄️</h2>
+  <section class="mostruario-grid">
+    <div class="produto-m">
+      <img src="imagens/camiseta1.jpg" alt="Camiseta Estampada">
+      <h3>Camiseta Divertida</h3>
+      <p>Com estampas criativas que encantam.</p>
+    </div>
+    <div class="produto-m">
+      <img src="imagens/macacao1.jpg" alt="Macacão Jeans">
+      <h3>Macacão Jeans</h3>
+      <p>Conforto e estilo em uma peça clássica.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="rodape-conteudo">
+      <p>&copy; 2025 Clau Kids. Todos os direitos reservados.</p>
+      <p>Siga-nos nas redes sociais:</p>
+      <div class="redes">
+        <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
