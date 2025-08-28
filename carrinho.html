@@ -7,19 +7,33 @@
 </head>
 <body>
   <header>
-    <img src="imagens/logo.jpg" alt="Logo Clau Kids">
-    <h1>Meu Carrinho 🛒</h1>
-
-    <!-- Botão para voltar à loja -->
-    <button class="btn-nav" onclick="window.location.href='index.html'">⬅️ Voltar à Loja</button>
+    <div class="topo">
+      <!-- Logo da loja -->
+      <img src="imagens/logo.jpg" alt="Logo Clau Kids" class="logo">
+      <div class="texto-header">
+        <h1>Meu Carrinho 🛒</h1>
+        <p>Confira seus produtos antes de finalizar a compra 🌸</p>
+      </div>
+      <!-- Botão para voltar à loja -->
+      <button class="btn-nav" onclick="window.location.href='index.html'">⬅️ Voltar à Loja</button>
+    </div>
   </header>
 
+  <!-- Seção do carrinho -->
   <section class="carrinho">
+    <h2>Produtos no Carrinho</h2>
+    <!-- Aqui serão adicionados os produtos do carrinho via JS -->
     <div id="lista-carrinho"></div>
+    <!-- Total da compra -->
     <p><strong>Total: R$ <span id="total">0</span></strong></p>
-    <button onclick="finalizarCompra()">Finalizar Compra no WhatsApp</button>
+    <!-- Botão de finalizar compra via WhatsApp -->
+    <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra no WhatsApp</button>
   </section>
 
+  <!-- Toast para mensagens -->
+  <div id="toast"></div>
+
+  <!-- Script que controla produtos, carrinho e toast -->
   <script src="script.js"></script>
 </body>
 </html>
