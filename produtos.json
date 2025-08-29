@@ -1,27 +1,27 @@
 [
   {
     "nome": "Vestido Infantil",
-    "preco": 30,
-    "imagem": "imagens/vestido.jpg"
+    "preco": 50,
+    "imagem": "imagens/produto1.png"
   },
   {
     "nome": "Conjunto Colorido",
     "preco": 95,
-    "imagem": "imagens/conjunto.jpg"
+    "imagem": "imagens/produto2.png"
   },
   {
     "nome": "Camiseta Divertida",
     "preco": 45,
-    "imagem": "imagens/camiseta.jpg"
+    "imagem": "imagens/produto2.png"
   },
   {
     "nome": "Camiseta Divertida",
     "preco": 45,
-    "imagem": "imagens/camiseta.jpg"
+    "imagem": "imagens/produto1.png"
   },
   {
     "nome": "Camiseta Divertida",
     "preco": 45,
-    "imagem": "imagens/camiseta.jpg"
+    "imagem": "imagens/produto1.png"
   }
 ]
