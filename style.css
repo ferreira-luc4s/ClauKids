@@ -540,5 +540,9 @@ footer .redes a:hover {
     justify-content: center;
     align-items: center;
   }
+
+    body, button, input, select, textarea, a {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
 }
 
