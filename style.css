@@ -542,33 +542,21 @@ footer .redes a:hover {
   }
 
   body {
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* mantém a mesma fonte */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     font-size: 16px; /* tamanho base para mobile */
   }
 
-  h1, h2, h3, p, span, label, button, input, textarea {
+  /* Elementos que podem ter fonte própria */
+  h1, h2, h3, h4, h5, h6,
+  p, span, label, button, input, textarea, a {
     font-family: inherit; /* herda do body */
   }
 
-  .texto-header h1 {
-    font-size: 22px; /* reduz um pouco o tamanho do título no mobile */
-  }
-
-  .texto-header p {
-    font-size: 14px; /* reduz o texto secundário */
-  }
-
-  .produto h2, .produto h3, .produto p,
-  .produto-m h3, .produto-m p {
-    font-size: inherit; /* mantém proporcional ao body */
-  }
-
-  .contato h2 {
-    font-size: 24px;
-  }
-
-  .contato p, .contato-info {
-    font-size: 14px;
-  }
+  /* Ajustes finos de tamanho de fonte */
+  h1 { font-size: 22px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 18px; }
+  p, span, label { font-size: 16px; }
+  button, input, textarea, a { font-size: 16px; }
 }
 
