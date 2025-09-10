@@ -55,14 +55,18 @@ header {
   display: flex;
   justify-content: center;
   position: relative;
+  padding: 10px;
 }
 
 .menu-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  flex-wrap: wrap; 
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .menu-links li a,
@@ -71,6 +75,7 @@ header {
   color: #ff3f7a;
   font-weight: bold;
   transition: color 0.3s;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .menu-links li a:hover,
@@ -78,37 +83,6 @@ header {
   color: #ff6fa1;
 }
 
-/* Menu hamburguer */
-.hamburguer {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: #ff3f7a;
-}
-
-@media (max-width: 768px) {
-  .menu-links {
-    display: none;
-    flex-direction: column;
-    background: #fff0f5;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    z-index: 100;
-  }
-
-  .menu-links.show {
-    display: flex;
-  }
-
-  .hamburguer {
-    display: block;
-  }
-}
 
 /* ===== Botão do carrinho ===== */
 .btn-nav {
@@ -370,75 +344,6 @@ footer .redes a:hover {
   text-decoration: underline;
 }
 
-/* ===== Responsividade ===== */
-@media (max-width: 768px) {
-  .topo {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .texto-header h1 {
-    font-size: 22px;
-  }
-
-  .texto-header p {
-    font-size: 14px;
-  }
-
-  .btn-nav {
-    margin-top: 10px;
-    width: 80%;
-  }
-
-  .produtos {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 15px;
-  }
-
-  .produto h2,
-  .produto h3 {
-    font-size: 16px;
-  }
-
-  .produto button {
-    padding: 10px 18px;
-    font-size: 14px;
-  }
-
-  .carrinho {
-    padding: 15px;
-  }
-
-  .btn-finalizar {
-    width: 100%;
-    padding: 12px 0;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .texto-header h1 {
-    font-size: 20px;
-  }
-
-  .texto-header p {
-    font-size: 12px;
-  }
-
-  .produtos {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .produto button {
-    width: 100%;
-  }
-
-  .btn-nav {
-    width: 100%;
-  }
-}
 
 /* ===== Página de Contato ===== */
 .contato {
@@ -577,3 +482,63 @@ footer .redes a:hover {
   font-weight: bold;
   color: #ff3f7a;
 }
+
+/* ===== Ajuste do menu em telas pequenas ===== */
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .menu-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .menu-links li a,
+  .menu-links li button {
+    font-size: 1.2rem; /* aumenta legibilidade no celular */
+  }
+
+  .btn-nav {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    z-index: 1000;
+    background: #ff6fa1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; /* mantém ícone legível */
+  }
+
+  /* Esconde apenas o texto, mantém ícone e contador */
+  .btn-nav .texto-botao {
+    display: none;
+  }
+
+  #contador-carrinho {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    color: #ff6fa1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
