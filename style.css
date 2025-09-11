@@ -38,6 +38,7 @@ header {
   margin: 0;
   color: #ff3f7a;
   font-size: 26px;
+  text-align: start;
 }
 
 .texto-header span {
@@ -402,6 +403,7 @@ footer .redes a:hover {
   background: linear-gradient(135deg, #ff9ec4, #ffd6e8);
   padding: 20px;
   color: white;
+  text-align: center;
 }
 .mostruario-header h1 span {
   color: #fff;
@@ -472,6 +474,16 @@ footer .redes a:hover {
 
 /* ===== Ajuste do menu em telas pequenas ===== */
 @media (max-width: 600px) {
+  body {
+  margin: 0;  
+  font-family: 'Comic Sans MS', cursive, sans-serif;  
+  background: linear-gradient(135deg, #ffd6f6, #c6f7ff, #fff7b2); 
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite; 
+  color: #444; 
+  overflow-x: hidden; /* 🔹 Evita scroll lateral no celular */
+}
+
   .menu {
     flex-direction: column;
     gap: 10px;
@@ -528,23 +540,6 @@ footer .redes a:hover {
     align-items: center;
   }
 
-  body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-size: 16px; /* tamanho base para mobile */
-  }
-
-  /* Elementos que podem ter fonte própria */
-  h1, h2, h3, h4, h5, h6,
-  p, span, label, button, input, textarea, a {
-    font-family: inherit; /* herda do body */
-  }
-
-  /* Ajustes finos de tamanho de fonte */
-  h1 { font-size: 22px; }
-  h2 { font-size: 20px; }
-  h3 { font-size: 18px; }
-  p, span, label { font-size: 16px; }
-  button, input, textarea, a { font-size: 16px; }
 
   .produtos {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
