@@ -1,27 +1,37 @@
 [
   {
-    "nome": "Vestido Infantil",
+    "nome": "Camisa Infantil Brooklyn",
     "preco": 50,
-    "imagem": "imagens/produto1.png"
+    "imagem": "imagens/produto4.png"
   },
   {
-    "nome": "Conjunto Colorido",
-    "preco": 95,
-    "imagem": "imagens/produto2.png"
+    "nome": "Camisa infantil Arizona",
+    "preco": 45,
+    "imagem": "imagens/produto3.png"
   },
   {
-    "nome": "Camiseta Divertida",
+    "nome": "Cropped Azul",
     "preco": 45,
     "imagem": "imagens/produto2.png"
   },
   {
-    "nome": "Camiseta Divertida",
+    "nome": "Cropped California",
     "preco": 45,
-    "imagem": "imagens/produto1.png"
+    "imagem": "imagens/produto1.jpg"
   },
   {
-    "nome": "Camiseta Divertida",
+    "nome": "Cropped rosa",
     "preco": 45,
-    "imagem": "imagens/produto1.png"
+    "imagem": "imagens/produto5.png"
+  },
+  {
+    "nome": "Cropped new york ",
+    "preco": 45,
+    "imagem": "imagens/produto6.png"
+  },
+  {
+    "nome": "Camisa amarela",
+    "preco": 45,
+    "imagem": "imagens/produto7.png"
   }
 ]
