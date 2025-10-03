@@ -1,6 +1,7 @@
 // ====== CARRINHO ======
 // Recupera carrinho do localStorage ou inicia vazio
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+let todosProdutos = []; // manter os produtos carregados
 
 // ====== TOAST ======
 // Mostra uma mensagem temporária
@@ -171,15 +172,39 @@ window.addEventListener("load", mostrarSlide);
 // ====== PRODUTOS (CARREGAR DO JSON) ======
 async function carregarProdutos() {
   try {
-    const response = await fetch("produtos.json"); // arquivo JSON
+    const response = await fetch("produtos.json");
     if (!response.ok) throw new Error("Erro ao carregar produtos");
-    
-    const produtos = await response.json();
-    mostrarProdutos(produtos);
+
+    todosProdutos = await response.json();
+    mostrarProdutos(todosProdutos);
   } catch (erro) {
     console.error("Falha ao carregar produtos:", erro);
   }
 }
+
+// Filtra produtos com base na pesquisa
+function filtrarProdutos(termo) {
+  const produtos = document.querySelectorAll(".produto");
+  const container = document.querySelector(".produtos");
+
+  let produtosVisiveis = 0;
+
+  produtos.forEach(produto => {
+    const nome = produto.querySelector("h3").textContent.toLowerCase();
+    const corresponde = nome.includes(termo.toLowerCase());
+
+    if (corresponde) {
+      produto.classList.remove("oculto");
+      produtosVisiveis++;
+    } else {
+      produto.classList.add("oculto");
+    }
+  });
+
+  container.style.gridTemplateColumns = "repeat(auto-fit, minmax(180px, 180px))";
+  container.style.justifyContent = "center";
+}
+
 
 // Renderiza produtos na tela
 function mostrarProdutos(produtos) {

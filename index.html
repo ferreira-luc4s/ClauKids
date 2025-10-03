@@ -55,6 +55,16 @@
     </div>
   </section>
 
+  <!-- Barra de pesquisa -->
+  <section class="barra-pesquisa">
+    <input
+      type="text"
+      id="pesquisa"
+      placeholder="Procurar produto..."
+      oninput="filtrarProdutos(this.value)"
+    />
+  </section>
+
   <!-- Produtos disponíveis na loja -->
   <section class="produtos" id="produtos"></section>
 
