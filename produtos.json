@@ -2,36 +2,43 @@
   {
     "nome": "Camisa Infantil Brooklyn",
     "preco": 50,
-    "imagem": "imagens/produto4.png"
+    "imagem": "imagens/produto4.png",
+    "tamanhos": ["P", "M", "G", "GG"]
   },
   {
-    "nome": "Camisa infantil Arizona",
+    "nome": "Camisa Infantil Arizona",
     "preco": 45,
-    "imagem": "imagens/produto3.png"
+    "imagem": "imagens/produto3.png",
+    "tamanhos": ["P", "M", "G"]
   },
   {
     "nome": "Cropped Azul",
     "preco": 45,
-    "imagem": "imagens/produto2.png"
+    "imagem": "imagens/produto2.png",
+    "tamanhos": ["12", "14", "16"]
   },
   {
     "nome": "Cropped California",
     "preco": 45,
-    "imagem": "imagens/produto1.jpg"
+    "imagem": "imagens/produto1.jpg",
+    "tamanhos": ["12", "14"]
   },
   {
     "nome": "Cropped rosa",
     "preco": 45,
-    "imagem": "imagens/produto5.png"
+    "imagem": "imagens/produto5.png",
+    "tamanhos": ["P", "M"]
   },
   {
-    "nome": "Cropped new york ",
+    "nome": "Cropped New York",
     "preco": 45,
-    "imagem": "imagens/produto6.png"
+    "imagem": "imagens/produto6.png",
+    "tamanhos": ["G", "GG"]
   },
   {
-    "nome": "Camisa amarela",
+    "nome": "Camisa Amarela",
     "preco": 45,
-    "imagem": "imagens/produto7.png"
+    "imagem": "imagens/produto7.png",
+    "tamanhos": ["P", "M", "G"]
   }
 ]

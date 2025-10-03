@@ -24,16 +24,20 @@ function mostrarToast(mensagem, cor = "#4CAF50") {
 // ====== FUNÇÕES DO CARRINHO ======
 
 // Adiciona produto ao carrinho
-function adicionarCarrinho(nome, preco, imagem) {
-  const itemExistente = carrinho.find(item => item.nome === nome);
+function adicionarCarrinho(nome, preco, imagem, tamanho) {
+  // Cria uma chave única baseada no nome do produto e tamanho
+  const chaveProduto = nome + " - " + tamanho;
+  
+  const itemExistente = carrinho.find(item => item.chave === chaveProduto);
+  
   if (itemExistente) {
     itemExistente.quantidade += 1;
   } else {
-    carrinho.push({ nome, preco, imagem, quantidade: 1 });
+    carrinho.push({ nome, preco, imagem, quantidade: 1, tamanho, chave: chaveProduto });
   }
 
   salvarCarrinho();
-  mostrarToast(`${nome} foi adicionado ao carrinho!`, "#4CAF50");
+  mostrarToast(`${nome} - Tamanho ${tamanho} foi adicionado ao carrinho!`, "#4CAF50");
 }
 
 // Salva no localStorage e atualiza tela e contador
@@ -51,7 +55,6 @@ function removerItem(index) {
   mostrarToast(`${nome} foi removido do carrinho!`, "#f44336");
 }
 
-// Atualiza carrinho na tela
 function atualizarCarrinho() {
   const lista = document.getElementById("lista-carrinho");
   if (!lista) return;
@@ -67,7 +70,13 @@ function atualizarCarrinho() {
 
     div.innerHTML = `
       <img src="${item.imagem}" alt="${item.nome}">
-      <span>${item.nome} - R$ ${item.preco} x ${item.quantidade}</span>
+      <span>${item.nome} - Tamanho: ${item.tamanho}</span>
+      <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+        <button onclick="alterarQuantidade(${index}, -1)">-</button>
+        <span>Qtd: ${item.quantidade}</span>
+        <button onclick="alterarQuantidade(${index}, 1)">+</button>
+      </div>
+      <p>Total: R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
       <button onclick="removerItem(${index})">Remover</button>
     `;
 
@@ -77,6 +86,7 @@ function atualizarCarrinho() {
   const totalEl = document.getElementById("total");
   if (totalEl) totalEl.textContent = total.toFixed(2);
 }
+
 
 // Atualiza contador de itens no carrinho
 function atualizarContador() {
@@ -98,17 +108,18 @@ function finalizarCompra() {
   let total = 0;
 
   carrinho.forEach(item => {
-    mensagem += `- ${item.nome} (R$ ${item.preco} x ${item.quantidade})\n`;
+    mensagem += `- ${item.nome} (Tamanho: ${item.tamanho}) (R$ ${item.preco} x ${item.quantidade})\n`;
     total += item.preco * item.quantidade;
   });
 
-  mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
+  mensagem += `\nTotal do pedido: R$ ${total.toFixed(2)}`;
 
   const numero = "+5519989393673"; // seu número
   const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
 
   window.open(url, "_blank");
 }
+
 
 // Inicializa carrinho ao carregar a página
 window.onload = () => {
@@ -178,17 +189,37 @@ function mostrarProdutos(produtos) {
   produtos.forEach(produto => {
     const div = document.createElement("div");
     div.className = "produto";
+    
+    // Criando o select de tamanhos baseado nas opções do produto
+    let tamanhosHTML = `
+     <option value="" disabled selected>Selecione</option>
+     ${produto.tamanhos.map(t => `<option value="${t}">${t}</option>`).join("")}
+    `;
+
     div.innerHTML = `
       <img src="${produto.imagem}" alt="${produto.nome}">
       <h3>${produto.nome}</h3>
       <p>R$ ${produto.preco}</p>
-      <button onclick="adicionarCarrinho('${produto.nome}', ${produto.preco}, '${produto.imagem}')">
-        Adicionar ao Carrinho
-      </button>
+      <label for="tamanho-${produto.nome}">Selecione o tamanho:</label>
+      <select id="tamanho-${produto.nome}" class="tamanho-select">
+        ${tamanhosHTML}
+      </select>
+      <button onclick="
+        const tamanho = document.getElementById('tamanho-${produto.nome}').value;
+        if (!tamanho) {
+          mostrarToast('Selecione um tamanho antes de adicionar!', '#f44336');
+          return;
+       }
+      adicionarCarrinho('${produto.nome}', ${produto.preco}, '${produto.imagem}', tamanho);
+    ">
+      Adicionar ao Carrinho
+    </button>
+
     `;
     container.appendChild(div);
   });
 }
+
 
 // ====== EXECUTA AO CARREGAR A PÁGINA ======
 window.addEventListener("load", () => {
@@ -203,6 +234,23 @@ function toggleMenu() {
   menu.classList.toggle('show');
   hamburguer.classList.toggle('active');
 }
+
+function alterarQuantidade(index, delta) {
+  if (carrinho[index]) {
+    carrinho[index].quantidade += delta;
+
+    // Remove o item se quantidade for 0 ou menos
+    if (carrinho[index].quantidade <= 0) {
+      carrinho.splice(index, 1);
+      mostrarToast("Item removido do carrinho", "#f44336");
+    } else {
+      mostrarToast("Quantidade atualizada", "#4CAF50");
+    }
+
+    salvarCarrinho();
+  }
+}
+
 
 
 

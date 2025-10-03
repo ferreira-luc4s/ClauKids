@@ -597,3 +597,55 @@ footer .redes a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;}
 }
 
+.tamanho-select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ffb6c1;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+  background-color: #fff;
+  color: #ff3f7a;
+  font-weight: bold;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none; /* remove o estilo nativo feio do navegador */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23ff6fa1' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+}
+
+.tamanho-select:focus {
+  border-color: #ff6fa1;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 111, 161, 0.3);
+}
+
+.produto label {
+  font-weight: bold;
+  color: #ff3f7a;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Estilo dos botões de quantidade no carrinho */
+
+.item-carrinho button {
+  cursor: pointer;
+  background-color: #ff6fa1 ;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.item-carrinho button:hover {
+  background-color: #ff3f7a;
+}
+
+.item-carrinho div {
+  margin-top: 5px;
+}
+
